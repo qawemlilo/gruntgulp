@@ -53,12 +53,12 @@ If you love writing code, you will love Gulp!
   - Input file is piped to gulp task which does special things with it and pipes it out to a destination
   - Take in a file, modify it and output new one
     
-## There are 5 methods in Gulp
-  .task - registers name of a task
-  .run - runs a Gulp task
-  .watch - watches changes in files and runs the callback function
-  .src - takes file system glob and returns a readable stream
-  .dest - destination - returns a writable stream
+## There are 5 methods in Gulp(Yes, only 5!)
+  - .task - registers name of a task
+  - .run - runs a Gulp task
+  - .watch - watches changes in files and runs the callback function
+  - .src - takes file system glob and returns a readable stream
+  - .dest - destination - returns a writable stream
  
 
 ## Links:
