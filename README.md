@@ -1,7 +1,7 @@
-#Task automation / Build tools
+#Task automation & Build tools
 
 
-Hi, my name is Qawelesizwe mlilo, you can call me Q. I'm a programmer, previously I have been employed as a php developer writing Joomla! extensions. These days I enjoy writing modular JavaScript programs mainly for the Node.js platform. I have also written a few npm modules that you can checkout by following links of presence on the interwebs.
+Hi, my name is Qawelesizwe mlilo ....
 
 ## Links
   - Blog <http://blog.ragingflame.co.za>
@@ -19,15 +19,6 @@ Today I'm going to talk to you about Build tools and Task automation in the Node
  - Unit testing
  - Deployment
  - image optimisation
- 
-Example
-I would like to demonstrate how one would use Grunt in a project. In my example we a building a simple website and we use Grunt to do the following.
-
- - Lint our JS
- - Concatinate all JS
- - Minify the JS
- - minify all images
- - copy all files
   
   
 #Grunt (http://gruntjs.com)
@@ -85,4 +76,4 @@ write-to-disk vs streams
   - executes shell commands
   - can be called using the command `npm run`
   
-
+  
