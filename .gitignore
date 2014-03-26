@@ -9,6 +9,9 @@
 *.docx
 Procfile~
 *.gitignore~
+*~
 node_modules/
 build/
+gruntdist/
+gulpdist/
 

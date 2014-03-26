@@ -1,48 +1,67 @@
 var gulp = require('gulp'),
-    gulpUtil = require('gulp-util'),
+    rename = require('gulp-rename'),
     imagemin = require('gulp-imagemin'),
-    minifyCSS = require('gulp-minify-css'),
+    jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     paths;
 
     
 paths = {
-    scripts: ['app/js/jquery.js', 'app/js/script.js'],
-    css: ['app/css/bootstrap.css', 'app/css/css.css'],
-    images: 'app/img/*.png'
+    scripts: [
+          'app/js/transition.js',
+          'app/js/alert.js',
+          'app/js/button.js',
+          'app/js/carousel.js',
+          'app/js/collapse.js',
+          'app/js/dropdown.js',
+          'app/js/modal.js',
+          'app/js/tooltip.js',
+          'app/js/popover.js',
+          'app/js/scrollspy.js',
+          'app/js/tab.js',
+          'app/js/affix.js'
+    ],
+
+    images: 'app/images/*'
 };
 
-    
+
+// Lint, Concatinate and minify js files    
 gulp.task('js', function () {
-    return gulp.src(paths.scripts)
+    return gulp.src(paths.scripts) 
+    
+        .pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter('default'))
+        
+        .pipe(concat('script.js'))
+        
+        .pipe(gulp.dest('./gulpdist/js'))
+        
+        .pipe(rename({suffix: '.min'}))
+        
         .pipe(uglify())
-        .pipe(concat('script.min.js'))
-        .pipe(gulp.dest('./production/js'));
+        
+        .pipe(gulp.dest('./gulpdist/js'));
 });
 
 
+// minify images
 gulp.task('images', function () {
  return gulp.src(paths.images)
     .pipe(imagemin({optimizationLevel: 5}))
-    .pipe(gulp.dest('./production/img'));
+    .pipe(gulp.dest('./gulpdist/images'));
 });
 
 
-gulp.task('css', function () {
-  return gulp.src(paths.css)
-    .pipe(minifyCSS({keepSpecialComments: 0}))
-    .pipe(concat('style.min.css'))
-    .pipe(gulp.dest('./production/css'));
-});
-
-
-gulp.task('html', function () {
-  return gulp.src('./app/*.html', {base: './app'})
-    .pipe(gulp.dest('./production'));
+// Rerun the task when a file changes 
+gulp.task('watch', function() {
+  gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.images, ['images']);
 });
 
 
 
-gulp.task('default', ['html', 'css', 'js', 'images']);
+gulp.task('default', ['js', 'images', 'watch']);
+
 
