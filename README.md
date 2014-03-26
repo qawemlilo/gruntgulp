@@ -22,18 +22,19 @@ Today I'm going to talk to you about Build tools and Task automation in the Node
   
   
 #Grunt (http://gruntjs.com)
-  1. What is grunt
-     Grunt is a task runner created by Ben Alman, a prolific (former) jQuery developer. 
-     The simplest way to get started with Grunt is to first install the Grunt command line interface globally which puts in your system path and makes it available inside any directory. 
-     The Grunt command requires a Gruntfile contining tasks in your project's root directory
+
+## What is grunt
+Grunt is a task runner created by Ben Alman, a prolific (former) jQuery developer. 
+The simplest way to get started with Grunt is to first install the Grunt command line interface globally which puts in your system path and makes it available inside any directory. 
+The Grunt command requires a Gruntfile contining tasks in your project's root directory
   
-  2. how does it work
-    - Configuration-over-code
-    - Abstracts how node works
-    - Each task reand and writes to disk
+## How does it work
+  - Configuration-over-code
+  - Abstracts how node works
+  - Each task reand and writes to disk
  
 
-Links:
+## Links:
   - http://javascriptjabber.com/074-jsj-grunt-js-with-ben-alman
   
   
@@ -41,18 +42,18 @@ Links:
   
 
 #Gulp (http://gulpjs.com)
-  1. What is Gulp
-     Gulp is an intuitive, code-over-configuration, streaming build system created by Eric Schoffstall. 
-     If you love writing code, you will love Gulp! 
+## What is Gulp
+Gulp is an intuitive, code-over-configuration, streaming build system created by Eric Schoffstall. 
+If you love writing code, you will love Gulp! 
   
-  2. How does it work
-    - Uses node streams
-    - Normal Node program, can be reused with any streaming thing
-    - Reduces reads and writes by operating in memory
-    - Input file is piped to gulp task which does special things with it and pipes it out to a destination
-    - Take in a file, modify it and output new one
+## How does it work
+  - Uses node streams
+  - Normal Node program, can be reused with any streaming thing
+  - Reduces reads and writes by operating in memory
+  - Input file is piped to gulp task which does special things with it and pipes it out to a destination
+  - Take in a file, modify it and output new one
     
-There are 5 methods in Gulp
+## There are 5 methods in Gulp
   .task - registers name of a task
   .run - runs a Gulp task
   .watch - watches changes in files and runs the callback function
@@ -60,15 +61,15 @@ There are 5 methods in Gulp
   .dest - destination - returns a writable stream
  
 
-Links:
+## Links:
   - http://javascriptjabber.com/097-jsj-gulp-js-with-eric-schoffstall\
   
 
 #Contrasts: Grunt vs Gulp
-Configuration-over-code vs Code-over-configurationsta
-More-is-better vs less-is-better
-Abstraction vs the-node-way
-write-to-disk vs streams
+  - Configuration-over-code vs Code-over-configurationsta
+  - More-is-better vs less-is-better
+  - Abstraction vs the-node-way
+  - write-to-disk vs streams
 
 
  
